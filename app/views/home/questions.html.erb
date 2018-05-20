@@ -1,0 +1,70 @@
+<main>
+  <div id="scorecard">
+    <div class="mindset" id="mindset-1">
+      <h2><strong>Mindset: <%= @q.id %></strong> <%= @q.title %></h2>
+      <hr>
+      <table class="criteria">
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td rowspan="3"><div class="criteria-text"><%=@q.q1%></div></td>
+          </tr>
+          <tr>
+            <td>2</td>
+          </tr>
+          <tr>
+            <td>3</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td rowspan="3"><div class="criteria-text"><%=@q.q2%></div></td>
+          </tr>
+          <tr>
+            <td>5</td>
+          </tr>
+          <tr>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td rowspan="3"><div class="criteria-text"><%=@q.q3%></div></td>
+          </tr>
+          <tr>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>9</td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td rowspan="3"><div class="criteria-text"><%=@q.q4%></div></td>
+          </tr>
+          <tr>
+            <td>11</td>
+          </tr>
+          <tr>
+            <td>12</td>
+          </tr>
+        </tbody>
+      </table>
+      <hr>
+      <%= form_tag "/questions/#{params[:id]}" do %>
+        <div class="score">
+          <input type="number" name="score" autofocus="true" class="form-control" placeholder="How would you rate yourself, on a scale of 1-12?"
+            tabindex="1" value="">
+          <input type="number" name="goal" class="form-control" placeholder="What is your ideal goal, on a scale of 1-12?"
+            tabindex="2" value="">
+          <textarea class="form-control" name="feedback" placeholder="Insights and Actions" maxlength="1000"></textarea>
+          <!-- <input type="submit" class="form-control btn" value="Next"> -->
+          <%= submit_tag 'Submit', class: "form-control btn" %>
+        </div>
+      <%end%>
+    </div>
+  </div>
+</main>
+
+<style type="text/css">
+  .mindset .criteria .criteria-text{
+    font-size: 14px;line-height: 20px;
+  }
+</style>

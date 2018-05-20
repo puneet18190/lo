@@ -1,0 +1,60 @@
+<div class="scorecard">
+	<h2>
+		<div class="field field-title disabled">
+			<textarea class="text" disabled="" maxlength="26">Top Loan Officer Potential</textarea>
+		</div>
+	</h2>
+	<table >
+		<thead>
+			<tr class="header">
+				<th>Mindsets</th>
+				<td>1</td>
+				<td>2</td>
+				<td>3</td>
+				<td>4</td>
+				<td>5</td>
+				<td>6</td>
+				<td>7</td>
+				<td>8</td>
+				<td>9</td>
+				<td>10</td>
+				<td>11</td>
+				<td>12</td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @data.each do |q| %>
+				<tr>
+					<th>
+						<div class="row-number">1</div>
+						<div class="mindset">
+							<div class="field disabled">
+								<textarea class="text" disabled="" maxlength="40"><%= q.title %></textarea>
+							</div>
+						</div>
+					</th>
+					<td colspan="3">
+						<div class="field disabled">
+							<textarea class="text" disabled="" maxlength="140"><%= q.q1 %></textarea>
+						</div>
+					</td>
+					<td colspan="3">
+						<div class="field disabled">
+							<textarea class="text" disabled="" maxlength="140"><%= q.q2 %></textarea>
+						</div>
+					</td>
+					<td colspan="3">
+						<div class="field disabled">
+							<textarea class="text" disabled="" maxlength="140"><%= q.q3 %></textarea>
+						</div>
+					</td>
+					<td colspan="3">
+						<div class="field disabled">
+							<textarea class="text" disabled="" maxlength="140"><%= q.q4 %></textarea>
+						</div>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
+</div>

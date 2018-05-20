@@ -1,0 +1,56 @@
+<main>
+  <div class="info">
+    <div class="survey" id="survey-intro">
+      <h2><strong>Your Information</strong></h2>
+      <p>When completing the scorecard, all fields must be filled in correctly. Once you've completed the scorecard,
+        an email with your completed scorecard will be sent to you.</p>
+      <%= form_for(resource, as: resource_name, url: registration_path(resource_name),id: "contact_form" ) do |f| %>
+        <%= devise_error_messages! %>
+        <div><%= f.text_field :firstname, placeholder: 'First Name', class: 'form-control', required: true %></div>
+        <div><%= f.text_field :lastname, placeholder: 'Last Name', class: 'form-control', required: true %></div>
+        <div><%= f.email_field :email, autofocus: true, autocomplete: "email", placeholder: 'Email', class: 'form-control', required: true %></div>
+        <div><%= f.password_field :password, placeholder: 'Password', class: 'form-control', required: true %></div>
+        <div><%= f.password_field :password_confirmation, placeholder: 'Confirm Password', class: 'form-control', required: true %></div>
+        <div><%= f.submit "Sign Up",class: "form-control btn" %></div>
+        <div><a class="form-control btn" href="/users/sign_in">Sign In</a></div>
+      <%end%>
+
+      <h4 class="hide success">You successfully submitted your information. Thank you! </h4>
+      <h4 class="hide error">We're sorry there has been an error. Please try again later.</h4>
+    </div>
+  </div>
+</main>
+
+<%
+=begin%>
+<h2>Sign up</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password %>
+    <% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "off" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :password_confirmation %><br />
+    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Sign up" %>
+  </div>
+<% end %>
+
+<%= render "devise/shared/links" %>
+<%
+=end%>

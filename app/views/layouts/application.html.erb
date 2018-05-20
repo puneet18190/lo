@@ -1,0 +1,65 @@
+<%
+=begin%>
+<!DOCTYPE html>
+<html>
+  <head>
+	<title>LoanPotential</title>
+	<%= csrf_meta_tags %>
+
+	<%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+	<%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+	<%= yield %>
+  </body>
+</html>
+<%
+=end%>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Know Your Score</title>
+
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+  <link rel="stylesheet" href="/assets/normalize.css" type="text/css">
+  <link rel="stylesheet" href="/assets/stylesheet.css" type="text/css">
+</head>
+
+<body>
+  <div id="root">
+		<header id="headerBar" style="height:63px">
+		  <div class="wrapper">
+				<h1 style="float:left">Know Your Score</h1>
+		  <% if user_signed_in? %>
+        <h4 style="float:right;color:white;font-size:15px">Logged in as <%= current_user.email %><%= link_to "Logout", destroy_user_session_path, method: :delete, style: "float:right;color:white;font-size:15px;margin-left:10px" %></h4>
+      <%else%>
+        <p class="pull-right"><%= link_to "Login", new_user_session_path %></p>
+      <%end%>
+		  </div>
+		</header>
+		<%= yield %>
+		<footer id="footerBar">
+			Copyright 2017
+			<a href="/login">Admin Login</a>
+		</footer>
+	</div>
+	<script
+		src="https://code.jquery.com/jquery-3.2.1.js"
+		integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+		crossorigin="anonymous">
+	</script>
+	<script 
+		src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.16.0/jquery.validate.min.js" integrity="sha256-UOSXsAgYN43P/oVrmU+JlHtiDGYWN2iHnJuKY9WD+Jg=" 
+		crossorigin="anonymous">
+	</script>
+	<script 
+		type="text/javascript" 
+		src="/assets/test.js">
+	</script>
+</body>
+
+</html>
