@@ -58,3 +58,9 @@ gem 'pry'
 gem 'devise'
 gem 'activeadmin'
 gem 'httparty'
+gem 'wicked_pdf'
+# gem 'wkhtmltopdf-binary', github: 'pallymore/wkhtmltopdf-binary-edge', tag: 'v0.12.2'
+gem 'wkhtmltopdf-binary-edge', '~> 0.12.2.1'
+group :development do
+  gem 'letter_opener_web', '~> 1.0'
+end

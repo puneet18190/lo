@@ -72,6 +72,11 @@ class HomeController < ApplicationController
     end
   end
 
+  def send_report
+    report = WickedPdf.new.pdf_from_string(render_to_string(:pdf => 'job', :template => 'home/send_report.pdf.erb'))
+    UserMailer.report(current_user.name, current_user.email, report).deliver_now
+  end
+
   def completed
     a = current_user.answers.last
     @data1 = JSON.parse a.data.gsub('=>', ':')
