@@ -110,7 +110,7 @@ class HomeController < ApplicationController
     respond_to do |format|
       format.html
       format.pdf do
-        render pdf: "file_name", layout: "application"
+        render pdf: "file_name"
       end
     end
   end
