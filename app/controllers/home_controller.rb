@@ -73,7 +73,14 @@ class HomeController < ApplicationController
   end
 
   def send_report
-    report = WickedPdf.new.pdf_from_string(render_to_string(:pdf => 'job', :template => 'home/send_report.pdf.erb'))
+    a = current_user.answers.last
+    @data1 = JSON.parse a.data.gsub('=>', ':')
+    @data=Question.all
+    @total_score=0
+    @total_goal=0
+    @data1.each{|a| @total_score = @total_score+a["score"].to_i}
+    @data1.each{|a| @total_goal = @total_goal+a["goal"].to_i}
+    report = WickedPdf.new.pdf_from_string(render_to_string(:template => 'home/answers.pdf.erb'))
     UserMailer.report(current_user.name, current_user.email, report).deliver_now
   end
 
@@ -85,5 +92,25 @@ class HomeController < ApplicationController
     @total_goal=0
     @data1.each{|a| @total_score = @total_score+a["score"].to_i}
     @data1.each{|a| @total_goal = @total_goal+a["goal"].to_i}
+  end
+
+  def previous_tests
+    @data = current_user.answers.all
+  end
+
+  def answers
+    a = current_user.answers.find(params[:id])
+    @data1 = JSON.parse a.data.gsub('=>', ':')
+    @data=Question.all
+    @total_score=0
+    @total_goal=0
+    @data1.each{|a| @total_score = @total_score+a["score"].to_i}
+    @data1.each{|a| @total_goal = @total_goal+a["goal"].to_i}
+    respond_to do |format|
+      format.html
+      format.pdf do
+        render pdf: "file_name", layout: "application"
+      end
+    end
   end
 end

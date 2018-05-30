@@ -1,0 +1,32 @@
+<main>    
+  <div id="scorecard">
+    
+    <div id="overview">
+      <!-- <h2>Thank you for completing your scorecard survey!</h2> -->
+      <div class="scorecard scored thank-you">
+        <h2 style="float: left;">Previous Results</h2>
+        <p class="pull-right text-right">
+          Completed by: <%= current_user.name %>
+        </p>
+        <table>
+          <thead>
+            <tr>
+							<th>Date</th>
+							<th>More Info</th>
+							<th>PDF</th>
+						</tr>
+          </thead>
+          <tbody>
+						<%@data.each do |a|%>
+							<tr>
+								<td><%= a.created_at.strftime('%D') %></td>
+								<td><%=link_to 'Click here', "/answers/#{a.id}" %></td>
+								<td><%=link_to 'Click here', "/answers/#{a.id}.pdf", target: '_blank' %></td>
+							</tr>
+						<%end%>
+					</tbody>
+				</table>
+			<div>
+		<div>
+	<div>
+</main>				

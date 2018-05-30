@@ -11,5 +11,7 @@ Rails.application.routes.draw do
   match '/questions/:id' => 'home#questions', via: :get
   match '/questions/:id' => 'home#add_answer', via: :post
   match '/send_report' => 'home#send_report', via: :get
+  match '/previous_tests' => 'home#previous_tests', via: :get
+  match '/answers/:id' => 'home#answers', via: :get
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

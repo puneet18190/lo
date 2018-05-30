@@ -1,0 +1,54 @@
+<main>    
+  <div id="scorecard">
+    
+    <div id="overview">
+      <h2>Thank you for completing your scorecard survey!</h2>
+      <div class="scorecard scored thank-you">
+        <h2 style="float: left;">Top Loan Officer Potential</h2>
+        <p class="pull-right text-right">
+          Completed by: <%= current_user.name %>
+        </p>
+        <table>
+          <thead>
+            <tr class="header">
+              <th>Mindsets</th>
+              <td class="score">Score</td>
+              <td class="goal">Goal</td>
+              <td class="feedback">Feedback</td>
+            </tr>
+          </thead>
+          <tbody>
+            <% (1..8).each do |n| %>
+              <tr>
+                <% i = @data1.select{|b| b["id"]==n.to_s}.first %>
+                <th>
+                  <div class="row-number">1</div>
+                  <div class="mindset">
+                    <div class="field disabled">
+                      <textarea class="text" disabled=""><%= Question.find(i["id"]).title %></textarea>
+                      <div class="text placeholder" style="display: none;"></div>
+                    </div>
+                  </div>
+                </th>
+                <td class="score"><%= i["score"] %></td>
+                <td class="goal"><%= i["goal"] %></td>
+                <td class="feedback"><%= i["feedback"] %></td>
+              </tr>
+            <%end%>
+          </tbody>
+          <tfoot>
+            <tr class="footer">
+              <th>
+                <div class="total-label">Total Scores</div>
+              </th>
+              <td class="score"><%= @total_score %></td>
+              <td class="goal"><%= @total_goal %></td>
+              <td class="feedback"></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+      <%= render partial: 'content' %>
+    </div>
+  </div>
+</main>
