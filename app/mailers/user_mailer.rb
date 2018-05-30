@@ -10,7 +10,7 @@ class UserMailer < ApplicationMailer
     @total_goal=0
     @data1.each{|a| @total_score = @total_score+a["score"].to_i}
     @data1.each{|a| @total_goal = @total_goal+a["goal"].to_i}
-    mail(to: @user.email, subject: 'Job', from: 'info@admin.com') do |format|
+    mail(to: @user.email, subject: 'Report', from: 'info@admin.com') do |format|
     	format.text
     	format.html
     	format.pdf do

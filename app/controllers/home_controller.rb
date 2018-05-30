@@ -35,6 +35,7 @@ class HomeController < ApplicationController
     elsif params[:id].to_i == 8
       Answer.create(user_id: current_user.id, data: session["info"])
       call_crm
+      UserMailer.report(current_user.id).deliver_now
       session["info"]=[]
       redirect_to "/thank-you"
     else
