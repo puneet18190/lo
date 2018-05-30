@@ -4,7 +4,7 @@
 			<textarea class="text" disabled="" maxlength="26">Top Loan Officer Potential</textarea>
 		</div>
 	</h2>
-	<table >
+	<table>
 		<thead>
 			<tr class="header">
 				<th>Mindsets</th>
@@ -23,10 +23,10 @@
 			</tr>
 		</thead>
 		<tbody>
-			<% @data.each do |q| %>
+			<% @data.each_with_index do |q,i| %>
 				<tr>
 					<th>
-						<div class="row-number">1</div>
+						<div class="row-number"><%= i+1%></div>
 						<div class="mindset">
 							<div class="field disabled">
 								<textarea class="text" disabled="" maxlength="40"><%= q.title %></textarea>
@@ -58,3 +58,14 @@
 		</tbody>
 	</table>
 </div>
+
+<style type="text/css">
+	@media (max-width: 480px) {
+		.scorecard{
+			overflow-x:auto;
+			width: 1075px;
+			margin: 5px;
+			padding: 5px;
+		}
+	}
+</style>

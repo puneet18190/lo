@@ -32,11 +32,15 @@
 
 <body>
   <div id="root">
-		<header id="headerBar" style="height:63px">
-		  <div class="wrapper">
+		<header id="headerBar" style="height:118px;padding:30px 0">
+		  <div class="wrapper" style="height:100%">
 				<h1 style="float:left">Know Your Score</h1>
 		  <% if user_signed_in? %>
-        <h4 style="float:right;color:white;font-size:15px"><a href="/previous_tests" style='color:white;margin-right:10px'>Previous Results</a>Logged in as <%= current_user.email %><%= link_to "Logout", destroy_user_session_path, method: :delete, style: "float:right;color:white;font-size:15px;margin-left:10px" %></h4>
+        <h4 style="float:right;color:white;font-size:15px" id="nav">
+        	<a href="/previous_tests" style='color:white;margin-right:10px'>Previous Results</a>
+        	<span>Logged in as <%= current_user.email %></span>
+        	<%= link_to "Logout", destroy_user_session_path, method: :delete, style: "float:right;color:white;font-size:15px;margin-left:10px" %>
+        </h4>
       <%else%>
         <p class="pull-right"><%= link_to "Login", new_user_session_path %></p>
       <%end%>
@@ -61,6 +65,21 @@
 		type="text/javascript" 
 		src="/assets/test.js">
 	</script>
+
+	<style type="text/css">
+  @media (max-width: 480px) {
+    .wrapper h1 {
+        padding: 4px !important;
+        font-size: 30px !important;
+    }
+    #nav{
+    	background-color: #644459;
+    }
+    #nav span{
+    	float: left;
+    }
+	}
+	</style>
 </body>
 
 </html>
