@@ -1,7 +1,7 @@
 <div class="scorecard">
 	<h2>
 		<div class="field field-title disabled">
-			<textarea class="text" disabled="" maxlength="26">Top Loan Officer Potential</textarea>
+			<textarea class="text" disabled="" maxlength="26" id="top_text">Top Loan Officer Potential</textarea>
 		</div>
 	</h2>
 	<table id="table" border="1" style="margin:20px" data-empty="There are no rows">
@@ -269,14 +269,23 @@
 
 <style type="text/css">
 	@media (max-width: 580px) {
-/*		.scorecard{
-			overflow-x:auto;
-			width: 1075px;
+		.scorecard{
+			/*overflow-x:auto;*/
+			/*width: 1075px;*/
 			margin: 5px;
 			padding: 5px;
-		}*/
+		}
 		.row-number{
 			display: none;
+		}
+		#top_text{
+			font-size: 22px;
+		}
+		#table .mindset{
+			font-size: 14px;
+		}
+		#table{
+			margin: 0 !important;
 		}
 	}
 </style>
