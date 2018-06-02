@@ -4,68 +4,303 @@
 			<textarea class="text" disabled="" maxlength="26">Top Loan Officer Potential</textarea>
 		</div>
 	</h2>
-	<table>
-		<thead>
-			<tr class="header">
-				<th>Mindsets</th>
-				<td>1</td>
-				<td>2</td>
-				<td>3</td>
-				<td>4</td>
-				<td>5</td>
-				<td>6</td>
-				<td>7</td>
-				<td>8</td>
-				<td>9</td>
-				<td>10</td>
-				<td>11</td>
-				<td>12</td>
-			</tr>
-		</thead>
-		<tbody>
-			<% @data.each_with_index do |q,i| %>
-				<tr>
-					<th>
-						<div class="row-number"><%= i+1%></div>
-						<div class="mindset">
-							<div class="field disabled">
-								<textarea class="text" disabled="" maxlength="40"><%= q.title %></textarea>
-							</div>
-						</div>
-					</th>
-					<td colspan="3">
-						<div class="field disabled">
-							<textarea class="text" disabled="" maxlength="140"><%= q.q1 %></textarea>
-						</div>
-					</td>
-					<td colspan="3">
-						<div class="field disabled">
-							<textarea class="text" disabled="" maxlength="140"><%= q.q2 %></textarea>
-						</div>
-					</td>
-					<td colspan="3">
-						<div class="field disabled">
-							<textarea class="text" disabled="" maxlength="140"><%= q.q3 %></textarea>
-						</div>
-					</td>
-					<td colspan="3">
-						<div class="field disabled">
-							<textarea class="text" disabled="" maxlength="140"><%= q.q4 %></textarea>
-						</div>
-					</td>
-				</tr>
-			<% end %>
-		</tbody>
-	</table>
+	<table id="table" border="1" style="margin:20px" data-empty="There are no rows">
+  <thead>
+    <tr class="header">
+      <th>Mindsets</th>
+      <td data-breakpoints="xs sm md" style="background-color: #72546f; padding:0">
+        <span class="r_no">1</span><span class="r_no">2</span><span class="r_no">3</span>
+      </td>
+      <td data-breakpoints="xs sm md" style="background-color: #7199b1; padding:0">
+      	<span class="r_no">4</span><span class="r_no">5</span><span class="r_no">6</span>
+      </td>
+      <td data-breakpoints="xs sm md" style="background-color: #8a9b3c; padding:0">
+      	<span class="r_no">7</span><span class="r_no">8</span><span class="r_no">9</span>
+      </td>
+      <td data-breakpoints="xs sm md" style="background-color: #dd5e00; padding:0">
+      	<span class="r_no">10</span><span class="r_no">11</span><span class="r_no">12</span>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+      <tr>
+        <th>
+          <div class="row-number">1</div>
+          <div class="mindset">
+            <div class="field disabled">
+              Personal Growth &amp; Ambition Mindset
+            </div>
+          </div>
+        </th>
+        <td>
+          <div class="field disabled">
+            You are frightened by changes and prefer things to stay as they currently are. You are not interested in change or growth.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You are starting to understand the possibilities of growth in all areas of your life, though you feel stuck.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You've experienced an acceptable status level, &amp; wish to maintain this level. You're not interested in further growth requiring more effort.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You always look for ways to grow and people who can help you become a better version of yourself. You may have a Business/Life Coach
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <div class="row-number">2</div>
+          <div class="mindset">
+            <div class="field disabled">
+              CEO Mindset
+            </div>
+          </div>
+        </th>
+        <td>
+          <div class="field disabled">
+            You feel your company should provide direction for your business future &amp; you depend on their support to determine your success.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You understand the concepts of being self-made and try to align with a company that will help support your desired growth.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You work to improve your skills, but feel your company/manager should be responsible to provide the tools needed to succeed.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You treat your business like "You, Inc." You have marketing/business plans &amp; you do not rely on others to invest in your success.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <div class="row-number">3</div>
+          <div class="mindset">
+            <div class="field disabled">
+              Sense of Urgency
+            </div>
+          </div>
+        </th>
+        <td>
+          <div class="field disabled">
+            You are afraid of doing things that others may perceive as "pushy" &amp; you tend to let life happen at its own pace &amp; aren't quick to act.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You are beginning to realize that you need to act quickly to seize opportunities in your life, yet you don't know how to do it.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You find there are times when you have acted quickly &amp; it has helped you and others, yet you find it hard to do when the stakes are highest.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            Your belief is that things need to happen right now before something changes and you relentlessly encourage others to move now.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <div class="row-number">4</div>
+          <div class="mindset">
+            <div class="field disabled">
+              Your Team
+            </div>
+          </div>
+        </th>
+        <td>
+          <div class="field disabled">
+            You do not see the benefit in adding a member to your team, or you would not want the responsibility.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You feel an assistant or partner could be helpful, but you haven't figured out how to fund them or how they would fit into your system.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You have at least 1 other member on your team and you have clearly defined roles for each person.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You have a full production team that predictably generates business whether you are in the office or not. Each member knows their role.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <div class="row-number">5</div>
+          <div class="mindset">
+            <div class="field disabled">
+              Systematic &amp; Proactive
+            </div>
+          </div>
+        </th>
+        <td>
+          <div class="field disabled">
+            You start each day without a plan. You are best at winging it.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            Most of your day is spent reacting to phone calls and emails. Your best intentions sometimes take the back seat to the crisis of the moment.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You have created systems that limit crisis management, giving you more time to prospect for new business.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You map out your days which keeps you focused on business generating activities regardless of what's going on around you.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <div class="row-number">6</div>
+          <div class="mindset">
+            <div class="field disabled">
+              Production Results
+            </div>
+          </div>
+        </th>
+        <td>
+          <div class="field disabled">
+            Your average 12 Month Productions is: Less than 5 loans per month.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            Your average 12 Month Productions is: 6-10 loans per month.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            Your average 12 Month Productions is: 10-20  loans per month.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            Your average 12 Month Productions is: 21+ loans per month.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <div class="row-number">7</div>
+          <div class="mindset">
+            <div class="field disabled">
+              Competitive Mindset
+            </div>
+          </div>
+        </th>
+        <td>
+          <div class="field disabled">
+            You feel competition is only for athletes and do not care about how you rank amongst your peers.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You want to win personally &amp; professionally in all areas of your life but aren't sure how to succeed.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You like to win at the things you deem important and feel the effort is more important than the results.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You want to win at everything you do and you are willing to put forth whatever effort is needed to guarantee victory.
+          </div>
+        </td>
+      </tr>
+      <tr>
+        <th>
+          <div class="row-number">8</div>
+          <div class="mindset">
+            <div class="field disabled">
+              Industry Lifestyle
+            </div>
+          </div>
+        </th>
+        <td>
+          <div class="field disabled">
+            You feel you should always separate business &amp; pleasure, &amp; treat each closing as a business transaction.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You'd like to find others with your same mindset to collaborate with but aren't sure where to find these groups to reach out.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You go to industry events and enjoy socializing at these events but prefer not talking shop during your personal time.
+          </div>
+        </td>
+        <td>
+          <div class="field disabled">
+            You enjoy talking shop with friends, family &amp; clients. You don't consider it "work". Hanging out with others in "Biz" is fun, like a hobby.
+          </div>
+        </td>
+      </tr>
+  </tbody>
+</table>
 </div>
 
 <style type="text/css">
-	@media (max-width: 480px) {
-		.scorecard{
+	@media (max-width: 580px) {
+/*		.scorecard{
 			overflow-x:auto;
 			width: 1075px;
 			margin: 5px;
 			padding: 5px;
+		}*/
+		.row-number{
+			display: none;
 		}
 	}
 </style>
+<script>
+  $(document).ready(function(){
+    $('#table').footable();
+  });
+</script>
+<style type="text/css">
+.r_no{
+  border-left: 1px solid white;
+  width: 33%;
+  float: left;
+  text-align: center;
+}
+/*.footable-details  tr th:1 {
+    background-color: #72546f;
+}
+.footable-details  tr th:2 {
+    background-color: #7199b1;
+}
+.footable-details  tr th:3 {
+    background-color: #8a9b3c;
+}
+.footable-details  tr th:4 {
+    background-color: #dd5e00;
+}*/
