@@ -382,10 +382,13 @@ header h1 {
     color: white;
 }
 
-@media (max-width:800px) {
+@media (max-width:580px) {
     header h1 {
-        padding-top: 28px;
-        font-size: 20px;
+        /*padding-top: 28px;*/
+        font-size: 28px;
+    }
+    header{
+        padding-left: 15px !important;
     }
 }
 
